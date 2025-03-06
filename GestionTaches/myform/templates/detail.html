@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+ 
+{% block content %} 
+<h1>Détails du contact</h1> 
+<p>Nom : {{ pers.name }}</p> 
+<p>Prénom : {{ pers.firstname }}</p> 
+<p>E-mail : {{ pers.email }}</p> 
+<p>Message : {{ pers.message }}</p> 
+{% if messages %} 
+<ul class="messages"> 
+{% for message in messages %} 
+<li class="{{ message.tags }}">{{ message }}</li> 
+{% endfor %} 
+</ul> 
+{% endif %} 
+{% endblock %}

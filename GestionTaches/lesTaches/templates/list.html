@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+ 
+    {% block title %} Liste des tâches {% endblock %} 
+    <section> 
+        {% block content %} 
+        <h3>Tâches en cours ou terminées</h3> 
+            <ul> 
+            {% for  tache in tasks %} 
+            <div  class="rcorners"> 
+            <li> 
+            <h4> 
+            {% if tache.closed %} 
+            <span class="closed">{{tache.name}}</span> 
+            {% else %} 
+            {{tache.name}} 
+            {% endif %} 
+            </h4> 
+            <h5>{{tache.description }} </h5> 
+            <p> 
+            Date du rendu: {{tache.colored_due_date}} 
+            </p> 
+            <p> 
+ 
+ 
+            Date du début: {{tache.schedule_date}} 
+            </p> 
+            </li> 
+            </div> 
+            {% endfor %} 
+            </ul> 
+        {% endblock %} 
+    </section> 
